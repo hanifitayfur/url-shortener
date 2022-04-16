@@ -66,7 +66,13 @@ https://github.com/hanifitayfur/url-shortener.git
 
 <span style="color: #D6E70A;font-size: 14px;"> Hangi tasarım yaklaşımı kullanılıyor?</span>
 
-Her projede code first yaklaşımı kullanılmaktadır. Tablodaki satırları kullanarak hızlıca aksiyon alabilirsiniz.
-
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
+<span style="color: #D6E70A;font-size: 19px;"><b> Mongo DB</b></span>
+
+```bash
+docker run --name mongoDB -p 27017:27017 mongo:latest
+docker pull mongoclient/mongoclient
+
+docker run --name mongoDBClient -d -p 3000:3000 mongoclient/mongoclient
+```
