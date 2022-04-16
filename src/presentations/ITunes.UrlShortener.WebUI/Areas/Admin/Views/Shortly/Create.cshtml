@@ -1,0 +1,69 @@
+@{
+    ViewBag.Title = "Create Short Url";
+    Layout = "_AdminLayout";
+}
+
+<section class="section">
+    <div class="section-header">
+        <div class="section-header-back">
+            <a href="" class="btn btn-icon">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1>Create New Shortly Url</h1>
+    </div>
+
+    <div class="section-body">
+        <p class="section-lead">
+            On this page you can create a new shortly url in all fields.
+        </p>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+
+
+                        <form id="create-shortly-form" action="/admin/Shortly/Create" enctype="multipart/form-data" method="post">
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Long Url</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="text" name="LongURL" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Expire Date</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input type="date" id="start" name="ExpireDate"
+                                           min="2022-01-01" max="2024-01-01">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                <div class="col-sm-12 col-md-7">
+                                    <button type="button" onclick="Shortly.Create.Click()" id="btn-create-shortly" class="btn btn-primary">Create</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                <div class="col-sm-12 col-md-7">
+                                    <p id="response-message"></p>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @await Component.InvokeAsync("ShortlyUrls")
+
+    </div>
+</section>
+
+@section Scripts
+{
+    <script src="~/Views/Shortly.js"></script>
+}

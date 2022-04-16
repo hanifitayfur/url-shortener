@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libraries\auth\ltunes.Core.Auth.Abstraction\ltunes.Core.Auth.Abstraction.csproj" />
+    <ProjectReference Include="..\..\libraries\security\ltunes.Security.Tools\ltunes.Security.Tools.csproj" />
+    <ProjectReference Include="..\ITunes.UrlShortener.Entities\ITunes.UrlShortener.Entities.csproj" />
+    <ProjectReference Include="..\ITunes.UrlShortener.Repositories\ITunes.UrlShortener.Repositories.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+</Project>

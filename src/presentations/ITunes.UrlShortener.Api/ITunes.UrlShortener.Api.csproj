@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\libraries\auth\ltunes.Core.Auth.Jwt\ltunes.Core.Auth.Jwt.csproj" />
+    <ProjectReference Include="..\..\libraries\cache\ltunes.Core.Cache.Abstraction\ltunes.Core.Cache.Abstraction.csproj" />
+    <ProjectReference Include="..\..\libraries\cache\lTunes.Core.Cache.Memory\lTunes.Core.Cache.Memory.csproj" />
+    <ProjectReference Include="..\..\services\ITunes.UrlShortener.Entities\ITunes.UrlShortener.Entities.csproj" />
+    <ProjectReference Include="..\..\services\ITunes.UrlShortener.Services\ITunes.UrlShortener.Services.csproj" />
+  </ItemGroup>
+
+</Project>

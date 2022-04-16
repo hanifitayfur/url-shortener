@@ -1,0 +1,40 @@
+@model dynamic
+
+@{
+    ViewBag.Title = "List Short Urls";
+    Layout = "_AdminLayout";
+}
+
+<section class="section">
+    <div class="section-header">
+        <div class="section-header-back">
+            <a href="" class="btn btn-icon">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        <h1>All Shortly Url</h1>
+    </div>
+
+    <div class="section-body">
+        <p class="section-lead">
+            On this page you can see all short urls
+        </p>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        @await Component.InvokeAsync("ShortlyUrls")
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+@section Scripts
+{
+    <script src="~/Views/Shortly.js"></script>
+}

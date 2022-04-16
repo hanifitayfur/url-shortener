@@ -1,0 +1,61 @@
+@using ITunes.UrlShortener.Entities.ResponseModel
+@model ITunes.UrlShortener.Entities.ResponseModel.ApplicationResponse<IList<ITunes.UrlShortener.Entities.ResponseModel.ShortUrlResponseDto>>
+
+<div class="panel panel-default">
+
+    @{
+        @if (Model?.Data != null)
+        {
+            <div class="row" id="shortly-urls-div">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>All Urls</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="table-1">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">
+                                            #
+                                        </th>
+                                        <th>ShortUrlValue</th>
+                                        <th>LongUrlValue</th>
+                                        <th>Expire Date</th>
+                                        <th>Create Date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @for (var index = 0; index < Model.Data.Count; index++)
+                                    {
+                                        var item = Model.Data[index];
+                                        <tr>
+                                            <td>@index</td>
+                                            <td>@item.ShortUrl</td>
+                                            <td>@item.LongUrl</td>
+                                            <td>@item.ExpireDate.ToShortDateString()</td>
+                                            <td>@item.CreatedAt.ToShortDateString()</td>
+                                        </tr>
+                                    }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <p>Data bulunamadı</p>
+        }
+
+        if (Model?.State == ResponseState.PageError)
+        {
+            <p>@Model.Message</p>
+        }
+    }
+
+</div>
